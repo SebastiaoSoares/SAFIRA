@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SAFIRA</title>
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"></link>
+    </head>
+    <body>
+        <div id="header">
+            <a href="#header">
+                <img id="icon" src="{{ url_for('static', filename='images/icon.png') }}" alt="Ícone">
+                <span><h3>SAFIRA</h3></span>
+            </a>
+        </div>
+        <div id="content">
+            <div id="sensors">
+                <fieldset><legend>Registros em Tempo Real</legend>
+                    <ul>
+                        <li>
+                            <span class="data_name">Fumaça: </span>
+                            <span id="f_detect" class="safe">[DETECTADA]</span><br>
+                            <span id="f_percent">60%</span> de precisão
+                        </li>
+                        <br>
+                        <li>
+                            <span class="data_name">Fumaça: </span>
+                            <span id="f_detect" class="safe">[DETECTADA]</span><br>
+                            <span id="f_percent">60%</span> de precisão
+                        </li>
+                        <br>
+                        <li>
+                            <span class="data_name">Fumaça: </span>
+                            <span id="f_detect" class="safe">[DETECTADA]</span><br>
+                            <span id="f_percent">60%</span> de precisão
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+            <div id="capture">
+                <fieldset><legend>Monitoramento por Imagem</legend>
+                    <img id="image" src="images/showImage.jpeg" alt="Imagem da Webcam">
+                </fieldset>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Sistema de Análise e Fornecimento de Informações sobre Incêndios em Territórios Autóctones - SAFIRA</p>
+            <p>Por Sebastião Sousa Soares e Espedito Ramom Mascena Ricarto.</p>
+            <p>EEEP Governador Virgílio Távora | 2023</p>
+        </div>
+    </body>
+</html>
