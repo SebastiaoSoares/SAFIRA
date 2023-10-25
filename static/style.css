@@ -31,7 +31,8 @@
     min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: flex-start;
+    justify-content: center;
     align-items: center;
     background: #e0e0e0;
 }
@@ -63,16 +64,16 @@
     font-weight: bold;
 }
 
-.safe {
+.nivel1 {
     color: green;
 }
 
-.no_safe {
-    color: red;
+.error, .nivel2 {
+    color: orange;
 }
 
-.error {
-    color: orange;
+.nivel3 {
+    color: red;
 }
 
 #footer {
