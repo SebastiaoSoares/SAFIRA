@@ -1,7 +1,6 @@
 import cv2
 import os
 import time
-from smoke_detection.detector import SmokeDetector
 
 # Verifica e cria a pasta de destino se ela não existir
 output_folder = 'imagens_detectadas'
