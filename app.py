@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    return render_template('index.html', fResult=values.fResult, tResult=values.tResult, uResult=values.uResult)
+    return render_template('index.html', fResult=values.fResult, tResult=values.tResult, uResult=values.uResult, r=values.r)
     # x_results = ["% of precision", "status (safe or no_safe)", "result text"]
 
 if __name__ == '__main__':

@@ -42,13 +42,23 @@
 }
 
 #content fieldset {
-    padding: 5vw;
+    padding: 20px;
     height: 100%;
     border-radius: 10px;
+    border: solid 1px black;
 }
 
-#content fieldset legend {
+#content legend {
+    float: none;
+    width: max-content;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: normal;
     text-align: center;
+    background-color: white;
+    padding: 0 5px;
 }
 
 #sensors, #capture {
@@ -76,6 +86,15 @@
     color: red;
 }
 
+#sensors, #capture {
+    background: white;
+    padding: 5vw;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px -5px black;
+    height: max-content;
+}
+
 #footer {
     background-color: lightgray;
     padding: 50px;
@@ -85,7 +104,7 @@
 
 /* MOBILE */
 @media screen and (max-width: 999px) {
-    #sensors, #capture {
+    #sensors, #capture, .alert {
         width: 90vw;
     }
 
@@ -100,7 +119,7 @@
 
 /* DESKTOP */
 @media screen and (min-width: 1000px) {
-    #sensors, #capture {
+    #sensors, #capture, .alert {
         width: 50vw;
     }
 

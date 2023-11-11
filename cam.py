@@ -2,47 +2,73 @@ import cv2
 import os
 import time
 
-# Verifica e cria a pasta de destino se ela não existir
-output_folder = 'imagens_detectadas'
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
+# Diretório onde as fotos serão armazenadas
+output_directory = 'static/images/fire_analysis/'
+smoke_directory = 'static/images/fire_analysis/fire_detected/'  # Pasta para armazenar imagens com detecção de fumaça
 
-# Inicializando a captura de vídeo da webcam
+# Cria o diretório se ele não existir
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
+
+if not os.path.exists(smoke_directory):
+    os.makedirs(smoke_directory)
+
+# Inicializa a câmera
 cap = cv2.VideoCapture(0)
 
-# Configurações iniciais
-num_frames = 0
-max_frames = 60
-frame_interval = 1  # intervalo em segundos
+# Lista para manter o controle das fotos capturadas
+captured_photos = []
 
-# Inicializar o detector de fumaça
-detector = SmokeDetector()
+# Define a contagem de tempo
+start_time = time.time()
+capture_interval = 1  # Captura uma foto a cada segundo
+max_photos = 60  # Mantém no máximo 60 fotos
 
 while True:
+    # Captura um frame da câmera
     ret, frame = cap.read()
-    if not ret:
-        continue
+    
+    if ret:
+        # Adiciona o frame à lista de fotos capturadas
+        captured_photos.append(frame)
+        
+        # Verifica se atingiu o limite de fotos
+        if len(captured_photos) > max_photos:
+            # Remove a foto mais antiga
+            captured_photos.pop(0)
+        
+        # Mostra a imagem na tela (opcional)
+        cv2.imshow('Captured Image', frame)
+        
+        # Verifica se passou o intervalo de captura
+        if time.time() - start_time >= capture_interval:
+            # Salva a foto mais recente
+            file_name = f'{output_directory}photo_{int(time.time())}.jpg'
+            cv2.imwrite(file_name, captured_photos[-1])
+            
+            # Converte a foto para escala de cinza
+            gray_frame = cv2.cvtColor(captured_photos[-1], cv2.COLOR_BGR2GRAY)
+            
+            # Aplica um desfoque para reduzir ruídos
+            blurred_frame = cv2.GaussianBlur(gray_frame, (21, 21), 0)
+            
+            # Detecta contornos na imagem
+            _, thresholded = cv2.threshold(blurred_frame, 200, 255, cv2.THRESH_BINARY)
+            contours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            
+            # Se houver contornos, pode ser fumaça
+            if len(contours) > 0:
+                print("Possível presença de fumaça!")
+                # Salva a imagem com detecção de fumaça na pasta "smoke_detected"
+                smoke_file_name = f'{smoke_directory}smoke_{int(time.time())}.jpg'
+                cv2.imwrite(smoke_file_name, captured_photos[-1])
+            
+            start_time = time.time()
+        
+        # Verifica se a tecla 'q' foi pressionada para sair
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
-    # Verifica se há fumaça na imagem
-    if detector.is_smoke(frame):
-        timestamp = time.strftime("%Y%m%d-%H%M%S")
-        img_name = f'imagem_{timestamp}.png'
-        cv2.imwrite(os.path.join(output_folder, img_name), frame)
-
-    num_frames += 1
-
-    # Apaga a foto mais antiga após 60 fotos
-    if num_frames > max_frames:
-        files = sorted(os.listdir(output_folder))
-        if files:
-            os.remove(os.path.join(output_folder, files[0]))
-        num_frames = 0
-
-    time.sleep(frame_interval)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# Liberar a captura e destruir as janelas
+# Fecha a câmera e a janela
 cap.release()
 cv2.destroyAllWindows()
