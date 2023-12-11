@@ -1,66 +1,86 @@
 #include <WiFi.h>
-#include <HTTPClient.h>
 
-const char *ssid = "PLUGNET-22355-2.4";
-const char *password = "82ou8jt3";
-const char *serverUrl = "http://192.168.0.112";
+#define WIFI_SSID     "PLUGNET-22355-2.4"
+#define WIFI_PASSWORD "82ou8jt3"
+#define SERVER_IP     "192.168.0.118"
+#define SERVER_PORT   80
+
+const char *host = SERVER_IP;
+const int port = SERVER_PORT;
+
+const int smokePin = A0;  // Pino do sensor de fumaça MQ-2
 
 void setup() {
   Serial.begin(115200);
-
-  // Conectar ao Wi-Fi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Conectando ao WiFi...");
-  }
-  Serial.println("Conectado ao WiFi");
-
   delay(1000);
+  Serial.println("Iniciando...");
+
+  // Conecta-se à rede Wi-Fi
+  connectToWiFi();
 }
 
 void loop() {
-  // Ler dados dos sensores
-  float dadoSensor1 = lerSensor1();
-  float dadoSensor2 = lerSensor2();
+  // Lê o valor do sensor de fumaça MQ-2
+  float smokeValue = getSmokeValue();
 
-  // Enviar dados para o servidor
-  enviarDados(dadoSensor1, dadoSensor2);
+  // Envia dados para o servidor Python
+  sendDataToServer(smokeValue);
 
-  delay(5000);  // Aguardar 5 segundos antes de enviar novamente
+  delay(5000);  // Aguarda 5 segundos antes de enviar o próximo conjunto de dados
 }
 
-float lerSensor1() {
-  // Lógica para ler dados do Sensor 1
-  return 25.5;  // Substitua pelo valor real lido pelo Sensor 1
-}
+void connectToWiFi() {
+  Serial.println("Conectando-se à rede Wi-Fi...");
 
-float lerSensor2() {
-  // Lógica para ler dados do Sensor 2
-  return 30.0;  // Substitua pelo valor real lido pelo Sensor 2
-}
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
-void enviarDados(float sensor1, float sensor2) {
-  HTTPClient http;
-
-  // Construir a URL com os parâmetros
-  String url = serverUrl + "?sensor1=" + String(sensor1) + "&sensor2=" + String(sensor2);
-
-  Serial.print("Enviando dados para: ");
-  Serial.println(url);
-
-  // Enviar a requisição HTTP
-  http.begin(url);
-  int httpResponseCode = http.GET();
-
-  // Verificar o código de resposta
-  if (httpResponseCode > 0) {
-    Serial.print("Resposta do servidor: ");
-    Serial.println(httpResponseCode);
-  } else {
-    Serial.println("Falha na requisição HTTP.");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.print(".");
   }
 
-  // Libera os recursos da requisição HTTP
-  http.end();
+  Serial.println();
+  Serial.println("Conectado à rede Wi-Fi");
+  Serial.println("Endereço IP: " + WiFi.localIP().toString());
+}
+
+float getSmokeValue() {
+  // Lê o valor analógico do sensor de fumaça MQ-2
+  int sensorValue = analogRead(smokePin);
+
+  // Converte para uma escala de 0 a 100 (ou ajuste conforme necessário)
+  float smokePercentage = map(sensorValue, 0, 1023, 0, 100);
+
+  Serial.print("Valor do sensor de fumaça: ");
+  Serial.println(smokePercentage);
+
+  return smokePercentage;
+}
+
+void sendDataToServer(float smokeValue) {
+  Serial.print("Enviando dados para o servidor... ");
+
+  WiFiClient client;
+
+  if (client.connect(host, port)) {
+    String data = "smoke=" + String(smokeValue);
+
+    client.println("POST / HTTP/1.1");
+    client.println("Host: " + String(host));
+    client.println("Content-Type: application/x-www-form-urlencoded");
+    client.println("Content-Length: " + String(data.length()));
+    client.println();
+    client.print(data);
+
+    delay(10);
+
+    while (client.available()) {
+      Serial.write(client.read());
+    }
+
+    client.stop();
+    Serial.println("Dados enviados com sucesso");
+  } else {
+    Serial.println("Falha na conexão com o servidor");
+  }
 }
