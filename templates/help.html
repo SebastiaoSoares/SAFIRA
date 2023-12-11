@@ -19,35 +19,14 @@
             <div class="alert alert-{{ r[0] }}" role="alert" style="text-align: center; font-weight: bold;">
                 <span>{{ r[1] }}</span>
             </div>
-            <a id="call" href="tel:193">ACIONAR EMERGÊNCIA</a>
-            <div id="sensors">
-                <fieldset><legend>Registros em Tempo Real</legend>
-                    <ul>
-                        <li>
-                            <span class="data_name">Fumaça: </span>
-                            <span class="{{ fResult[0] }}">{{ fResult[1] }}</span>
-                        </li>
-                        <!-- <br>
-                        <li>
-                            <span class="data_name">Temperatura: </span>
-                            <span class="{{ tResult[0] }}">{{ tResult[1] }}</span>
-                        </li>
-                        <br>
-                        <li>
-                            <span class="data_name">Umidade: </span>
-                            <span class="{{ uResult[0] }}">{{ uResult[1] }}</span>
-                        </li> -->
-                    </ul>
-                </fieldset>
-            </div>
-            <div id="capture">
+            <div id="help">
                 <fieldset><legend>Monitoramento por Imagem</legend>
                     <img id="image" src="{{ url_for('static', filename='images/fire_analysis/img.jpeg') }}" alt="Imagem da Webcam">
                 </fieldset>
             </div>
         </div>
         <div id="footer">
-            <p>Sistema de Análise e Fornecimento de Informações sobre Incêndios em Regiões Autóctones e Quilombolas - SAFIRA</p>
+            <p>Sistema de Análise e Fornecimento de Informações sobre Incêndios em Territórios Autóctones - SAFIRA</p>
             <p>Por Sebastião Sousa Soares e Espedito Ramom Mascena Ricarto.</p>
             <p>EEEP Governador Virgílio Távora | 2023</p>
         </div>

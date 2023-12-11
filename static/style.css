@@ -7,11 +7,12 @@
 #header {
     max-height: 10vh;
     background-color: rgb(0, 17, 95);
-    display: flex;
-    align-items: center;
     box-shadow: 0 0 10px 0 black;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #header a {
@@ -19,22 +20,36 @@
     align-items: center;
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 
 #icon {
-    width: 40px;
-    margin-right: 10px;
+    width: 25px;
+    margin: -8px 10px 0 0;
+    filter: invert();
+}
+
+#call {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 10px;
+    background: linear-gradient(180deg, rgb(255, 170, 131) 0%, rgb(255, 86, 7) 15% 85%, rgb(158, 63, 0) 100%);
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -5px black;
 }
 
 #content {
     padding: 3vw;
     min-height: 80vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: flex-start;
     justify-content: center;
     align-items: center;
     background: #e0e0e0;
+    flex-direction: column;
 }
 
 #content ul {
@@ -100,6 +115,11 @@
     padding: 50px;
     text-align: center;
     font-size: 15px;
+}
+
+#image {
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* MOBILE */
