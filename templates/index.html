@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="10">
+        <meta http-equiv="refresh" content="5">
         <title>SAFIRA</title>
         <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"></link>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -26,24 +26,14 @@
                     <ul>
                         <li>
                             <span class="data_name">Fumaça: </span>
-                            <span class="{{ fResult[0] }}">{{ fResult[1] }}</span>
+                            <span class="{{ r[2] }}">{{ r[3] }}</span>
                         </li>
-                        <!-- <br>
-                        <li>
-                            <span class="data_name">Temperatura: </span>
-                            <span class="{{ tResult[0] }}">{{ tResult[1] }}</span>
-                        </li>
-                        <br>
-                        <li>
-                            <span class="data_name">Umidade: </span>
-                            <span class="{{ uResult[0] }}">{{ uResult[1] }}</span>
-                        </li> -->
                     </ul>
                 </fieldset>
             </div>
             <div id="capture">
                 <fieldset><legend>Monitoramento por Imagem</legend>
-                    <img id="image" src="{{ url_for('static', filename='images/fire_analysis/img.jpeg') }}" alt="Imagem da Webcam">
+                    <img id="image" src="{{ url_for('static', filename='images/fire_analysis/capture.jpg') }}" alt="Imagem da Webcam">
                 </fieldset>
             </div>
         </div>

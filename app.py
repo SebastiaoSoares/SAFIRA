@@ -7,8 +7,7 @@ app = Flask(__name__)
 def index():
 
     fumaca = request.form.get('fumaca')
-    return render_template('index.html', fumaca=fumaca, fResult=values.fResult, tResult=values.tResult, uResult=values.uResult, r=values.r)
-    # x_results = ["% of precision", "status (safe or no_safe)", "result text"]
+    return render_template('index.html', fumaca=fumaca, r=values.r)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)

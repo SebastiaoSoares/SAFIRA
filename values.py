@@ -1,16 +1,12 @@
 # r[0] = {sucess/danger}
 
 r = []
-rSafe = ["success", "INCÊNDIO NÃO DETECTADO"]
-rNoSafe = ["danger", "INCÊNDIO DETECTADO!"]
+rSafe = ["success", "INCÊNDIO NÃO DETECTADO", "green", "não detectada"]
+rNoSafe = ["danger", "INCÊNDIO DETECTADO!", "red","detectada"]
 
-safe = False
+safe = True
 
 if safe:
     r = rSafe
 else:
     r = rNoSafe
-
-fResult = ["nivel1", "detectada"]
-tResult = ["nivel3", "48°C"]
-uResult = ["nivel2", "15% (baixa)"]

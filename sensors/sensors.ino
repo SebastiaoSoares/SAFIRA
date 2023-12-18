@@ -1,14 +1,14 @@
 #include <WiFi.h>
 
-#define WIFI_SSID     "PLUGNET-22355-2.4"
-#define WIFI_PASSWORD "82ou8jt3"
-#define SERVER_IP     "192.168.0.118"
+#define WIFI_SSID     "SAFIRA"
+#define WIFI_PASSWORD "milkshake"
+#define SERVER_IP     "192.168.100.96"
 #define SERVER_PORT   80
 
 const char *host = SERVER_IP;
 const int port = SERVER_PORT;
 
-const int smokePin = A0;  // Pino do sensor de fumaça MQ-2
+const int smokePin = 13;  // Pino do sensor de fumaça MQ-2
 
 void setup() {
   Serial.begin(115200);
