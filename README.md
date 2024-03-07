@@ -5,7 +5,7 @@ O Sistema de Análise e Fornecimento de Informações sobre Incêndios em Regiõ
 O projeto foi apresentado no evento Ceará Científico 2024, na categoria Educação Ambiental, no qual foi premiado em primeiro lugar na Etapa Regional, pela Coordenadoria Regional de Desenvolvimento da Educação (CREDE 18) da Secretaria de Educação do Estado do Ceará (SEDUC - CE).
 
 ***Os envolvidos com o projeto foram:***
- Sebastião Sousa Soares - estudante idealizador;
+- Sebastião Sousa Soares - estudante idealizador;
 - Espedito Ramom Mascena Ricarto - estudante idealizador;
 - Sandra Meirelles de Amorim - professora orientadora;
 - Francisco David da Silva Santos - professor co-orientador.
