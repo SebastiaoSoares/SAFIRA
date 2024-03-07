@@ -1,5 +1,17 @@
 # SAFIRA
 
+**Sumário:**
+1. [Descrição](#descrição)
+2. [Objetivos do Projeto](#objetivos-do-projeto)
+3. [Tecnologias Utilizadas](#tecnologias-utilizadas)
+4. [Conquistas](#conquistas)
+5. [Contribuidores](#contribuidores)
+6. [Conteúdo do Repositório](#conteúdo-do-repositório)
+7. [Como Contribuir](#como-contribuir)
+8. [Licença](#licença)
+
+## Descrição
+
 O SAFIRA (Sistema de Análise e Fornecimento de Informações sobre Incêndios em Regiões Autóctones e Quilombolas) é um projeto desenvolvido em Python, com o objetivo de detectar e prevenir incêndios em áreas habitadas por comunidades tradicionais, garantindo a segurança e sobrevivência dessas populações.
 
 ## Objetivos do Projeto
