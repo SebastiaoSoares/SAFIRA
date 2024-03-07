@@ -48,3 +48,23 @@ Você é bem-vindo para contribuir com sugestões, correções de bugs ou melhor
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+Copyright (c) 2024 Sebastião Sousa Soares e Espedito Ramom Mascena Ricarto
+
+Permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia
+deste software e dos arquivos de documentação associados (o "Software"), para lidar
+no Software sem restrição, incluindo, sem limitação, os direitos
+usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e / ou vender
+cópias do Software, e permitir que pessoas a quem o Software seja
+fornecido para fazê-lo, sujeito às seguintes condições:
+
+O aviso de copyright acima e este aviso de permissão devem ser incluídos em todos
+cópias ou partes substanciais do Software.
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU
+IMPLÍCITO, INCLUINDO, MAS NÃO SE LIMITANDO A GARANTIAS DE COMERCIALIZAÇÃO,
+ADEQUAÇÃO A UM DETERMINADO PROPÓSITO E NÃO VIOLAÇÃO. EM NENHUMA CIRCUNSTÂNCIA O
+AUTORES OU TITULARES DE DIREITOS AUTORAIS SÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO, DANOS OU OUTRAS
+RESPONSABILIDADE, SEJA EM AÇÃO DE CONTRATO, DELITO OU OUTRA FORMA, DECORRENTE DE,
+FORA OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO
+SOFTWARE.
