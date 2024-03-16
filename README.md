@@ -74,6 +74,6 @@ SOFTWARE.
 Se você tiver alguma dúvida, feedback ou precisar de suporte, sinta-se à vontade para entrar em contato conosco:
 
 - E-mail:
--- sebastiaosoares145@gmail.com (Sebastião);
--- ramomricarto@gmail.com (Espedito Ramom).
+  sebastiaosoares145@gmail.com (Sebastião);
+  ramomricarto@gmail.com (Espedito Ramom).
 - Instagram: [Link para o Instagram](https://instagram.com/projeto.safira)
