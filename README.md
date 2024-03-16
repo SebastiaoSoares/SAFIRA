@@ -9,6 +9,7 @@
 6. [Conteúdo do Repositório](#conteúdo-do-repositório)
 7. [Como Contribuir](#como-contribuir)
 8. [Licença](#licença)
+9. [Contato](#contato)
 
 ## Descrição
 
