@@ -71,7 +71,7 @@ SOFTWARE.
 
 ## Contato
 
-Se você tiver alguma dúvida, feedback ou precisar de suporte, sinta-se à vontade para entrar em contato conosco:
+Se você tiver alguma dúvida, feedback, sugestão ou crítica, sinta-se à vontade para entrar em contato conosco:
 
 - E-mail:
   sebastiaosoares145@gmail.com (Sebastião);
