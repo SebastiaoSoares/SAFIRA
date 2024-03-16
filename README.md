@@ -68,3 +68,12 @@ AUTORES OU TITULARES DE DIREITOS AUTORAIS SÃO RESPONSÁVEIS POR QUALQUER REIVIN
 RESPONSABILIDADE, SEJA EM AÇÃO DE CONTRATO, DELITO OU OUTRA FORMA, DECORRENTE DE,
 FORA OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO
 SOFTWARE.
+
+## Contato
+
+Se você tiver alguma dúvida, feedback ou precisar de suporte, sinta-se à vontade para entrar em contato conosco:
+
+- E-mail:
+-- sebastiaosoares145@gmail.com (Sebastião);
+-- ramomricarto@gmail.com (Espedito Ramom).
+- Instagram: [Link para o Instagram](https://instagram.com/projeto.safira)
