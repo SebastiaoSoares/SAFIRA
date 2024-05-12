@@ -31,8 +31,8 @@ O projeto SAFIRA foi premiado em primeiro lugar na categoria Educação Ambienta
 
 ## Contribuidores
 
-- Sebastião Sousa Soares (estudante idealizador)
-- Espedito Ramom Mascena Ricarto (estudante idealizador)
+- [Sebastião Sousa Soares](https://github.com/SebastiaoSoares/) (estudante idealizador)
+- [Espedito Ramom Mascena Ricarto](https://github.com/RamomRicarto/) (estudante idealizador)
 - Sandra Meirelles de Amorim (professora orientadora)
 - Francisco David da Silva Santos (professor co-orientador)
 
